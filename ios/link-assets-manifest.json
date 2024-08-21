@@ -1,0 +1,17 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/18 Khebrat Musamim Regular.ttf",
+      "sha1": "c19e1db025f454183ad761fdcb9cba8a6715f769"
+    },
+    {
+      "path": "assets/fonts/Poppins-Regular.ttf",
+      "sha1": "fdd3002e7d814ee47c1c1b8487c72c6bbb3a2d00"
+    },
+    {
+      "path": "assets/fonts/readme.html",
+      "sha1": "3733a3ed1259e20a17a4683ddaf988a69cc835f2"
+    }
+  ]
+}
