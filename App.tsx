@@ -1,17 +1,35 @@
+
 import React from 'react';
-import { View, Text, TextInput, TouchableOpacity,Image,StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity,Image,StyleSheet, StatusBar } from 'react-native';
 import { useTailwind } from 'nativewind';
 import LinearGradient from 'react-native-linear-gradient';
-import Icon from 'react-native-vector-icons/FontAwesome';
-
+import Icon from 'react-native-vector-icons/MaterialIcons';
 const App = () => {
   
+
+  
+  
+  var textfields = [];
+
+	for(let i = 0; i < 5; i++){
+
+		textfields.push(
+			<TextInput 
+       className='border-b-2  p-0  text-red  m-[6] text-center '
+       maxLength={1}
+       key={i}
+      />
+				
+				
+		)
+	}
+
 
   return (
     <View className='flex-1 justify-center items-center bg-gray-300'>
       
    
-      <LinearGradient colors={['#1eae97','#0175b2','#4b3d91']} start={{ x: 0, y: 0}} end={{ x: 1, y: 1 }} className='absolute top-0 w-full h-1/2  rounded-b-3xl' />
+      <LinearGradient colors={['#1eae97','#0175b2','#4b3d91']} start={{ x: 0, y: 0}} end={{ x: 1, y: 1 }} className='absolute top-0 w-full h-[270]  rounded-b-3xl' />
 
       
      
@@ -24,13 +42,13 @@ const App = () => {
         
       
       
-      <View className='bg-white w-4/5 rounded-2xl p-8 z-10 mb-11'>
+      <View className='bg-white w-4/5 rounded-2xl p-8 z-10 mb-20'>
         <Text style={styles.text} className='text-black  mb-4 text-center'>LOGIN</Text>
 
         
-        <View className='flex-row items-center mb-4 w-full bg-gray-200 rounded-2xl'>
-          <LinearGradient colors={['#0175b2','#4b3d91']} className='h-10 w-10 rounded-full justify-center items-center mr-4'>
-          const myIcon = <Icon name="rocket" size={30} color="#900" />;
+        <View className='flex-row items-center mb-4 w-full bg-gray-200 rounded-3xl'>
+          <LinearGradient colors={['#0175b2','#4b3d91']} className='h-10 w-10 rounded-full justify-center items-center ml-[2]'>
+           <Icon  name="person" size={27} color="#ffff" />
           </LinearGradient>
           <TextInput 
            
@@ -40,29 +58,38 @@ const App = () => {
         </View>
 
         
-        <View className='flex-row items-center mb-4 w-full bg-gray-200 rounded-2xl'>
-          <LinearGradient colors={['#0175b2','#4b3d91']} className='h-10 w-10 rounded-full justify-center items-center mr-4'>
-           <Image  className='h-5 w-5 justify-center ' source={require('./assets/key.png')} resizeMode='contain'/>
+        <View className='flex-row items-center mb-4 w-full bg-gray-200 rounded-3xl'>
+          <LinearGradient colors={['#0175b2','#4b3d91']} className='h-10 w-10 rounded-full justify-center items-center ml-[2]'>
+           <Icon name="key" size={25} color="#ffff"/>
           </LinearGradient>
-          <TextInput 
-           
-            placeholder="Your Key"
-            className='border-2xl  flex-1 pb-2 text-lg '
-          />
+          <View className='flex-row  ' >
+            
+            {textfields}
+            
+            </View>
         </View>
 
         
         <TouchableOpacity >
           <LinearGradient colors={['#0175b2','#4b3d91']} className=' py-3 rounded-full items-center' >
-          <Text  className='text-white text-lg font-semibold '>LOGIN</Text>
+          <View className=' font-semibold items-center flex-row mr-2'><Text  ><Icon name="login" size={20} color="#ffff" />
+          
+         </Text><Text className='text-white ml-2 text-xs'>LOGIN</Text></View>
           </LinearGradient>
         </TouchableOpacity>
 
       
         <TouchableOpacity className='mt-4'>
-          <Text className='text-blue-500 text-center text-sm'>Change Your PIN</Text>
+        <View className='flex-row items-center'>
+  <View className='flex-[1] h-[0.5] border-b bg-black ml-7' />
+  <View>
+    <Text style={styles.changepin} className="text-blue-900 w-24 text-center ">Change Your PIN</Text>
+  </View>
+  <View  className='flex-[1]  border-b h-[0.5] bg-black mr-7' />
+</View>
         </TouchableOpacity>
       </View>
+      
     </View>
   );
 }
@@ -78,6 +105,15 @@ const styles = StyleSheet.create({
     textAlign:'center',
     color:'black',
     fontSize: 25,
+
+  }
+  , changepin:{
+    fontFamily:'Poppins-Bold',
+   
+    textAlign:'center',
+    fontSize: 10,
+  
+   
 
   }
 
